@@ -1,7 +1,7 @@
 docker-squid-repo-cache
 =======================
 
-Docker image of Sonatype Nexus OSS
+Docker image of squid-deb-proxy (also for RPM)
 
     OS Base : Ubuntu 14.04
     Exposed Ports : 8000 2812
