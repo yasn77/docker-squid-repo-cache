@@ -1,0 +1,5 @@
+check process squid-deb-proxy with pidfile /var/run/squid-deb-proxy.pid
+       start program = "/etc/init.d/squid-deb-proxy start"
+       stop program  = "/etc/init.d/squid-deb-proxy stop"
+       restart program = "/etc/init.d/squid-deb-proxy restart"
+       if failed port 8000 then restart

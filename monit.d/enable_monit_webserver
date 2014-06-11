@@ -1,0 +1,4 @@
+set httpd port 2812 and
+   allow 0.0.0.0/0.0.0.0
+   allow monit:__MONIT_PASSWD__
+   allow @monit           # allow users of group 'monit' to connect (rw)
