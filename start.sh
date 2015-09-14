@@ -10,7 +10,8 @@ sed -e 's/\(session.*pam_loginuid.so\)/\# \1/' -i /etc/pam.d/sshd
 
 if [ "${CACHE_ANY}" == 'true' ]
 then
-  sed -e 's/^#\([cache\|http_access allow].*to_archive_mirrors$\)/\1/' -i /etc/squid-deb-proxy/squid-deb-proxy.conf
+  sed -e 's/^\([cache\|http_access].*deny.*to_archive_mirrors$\)/#\1/' -i /etc/squid-deb-proxy/squid-deb-proxy.conf
+  sed -e 's/^#\([cache\|http_access].*allow.*to_archive_mirrors$\)/\1/' -i /etc/squid-deb-proxy/squid-deb-proxy.conf
 fi
 
 echo ${EXTRA_MIRROR_DSTDOMAIN} | tr ' ' '\n' >> /etc/squid-deb-proxy/mirror-dstdomain.acl.d/10-default
